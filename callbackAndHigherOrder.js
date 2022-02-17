@@ -150,8 +150,17 @@ console.log(contains(names, "Ryan", nameChecked))
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
   Hint: you can use a nested for loop to do this.
 */
+let printArray = function(printableArray) {
+  return printableArray
+}
 
-// CODE HERE
+
+let uniq = function(arrayName, callback){
+  let uniqArray = [...new Set(arrayName)]
+    return callback(uniqArray)
+}
+
+console.log(uniq(names, printArray))
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -160,9 +169,11 @@ console.log(contains(names, "Ryan", nameChecked))
   'The new names array with all the duplicate items removed is [UNIQARRPARAM].'
 */
 
-// CODE HERE
+let printArray2 = function(uniqArr) {
+  return `The new names array with all the duplicate items removed is:` + uniqArr
+}
 
-
+console.log(uniq(names, printArray2))
 
 ////////// PROBLEM 6 //////////
 
@@ -171,8 +182,21 @@ console.log(contains(names, "Ryan", nameChecked))
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-// CODE HERE 
+let printIndex = function(nameValue, nameIndex) {
+  console.log(`${nameValue} is at index ${nameIndex} in the array.`)
+}
 
+
+let each = function(nameArray, callback) {
+
+  for(i=0; i < nameArray.length; i++){
+    callback(nameArray[i], i)
+
+  }
+
+}
+
+each(names, printIndex)
 
 /*
   Invoke the each function, passing in the names array and a callback function.
